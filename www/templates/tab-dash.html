@@ -1,0 +1,85 @@
+<ion-view view-title="Calculator">
+    <ion-content class="padding">
+        <div class="list card">
+            
+            <div class="item item-body">
+                
+                    <div class="item item-text-wrap">
+                        <div class="row">
+                            <div class="col col-10" style="text-align:right"><img class="icon-cups" src="img/Coffee.svg"></div>
+                            <div class="col" style="text-align:left">Cups</div>
+
+                            <span class="col" style="font-size: 17px; color: #808080; text-align:right; letter-spacing: 0.02px" type="text" id="cups" text-align="right"></span>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col col-10" style="text-align:right"><img class="icon-coffee" src="img/Chemex.svg"></div>
+                            <div class="col" style="text-align:left">Coffee</div>
+                            <span class="col" style="font-size: 17px; color: #808080; text-align:right; letter-spacing: 0.02px" type="text" id="coffee" text-align="right"></span>
+
+                        </div>
+                        <div class="row">
+                            <div class="col col-10" style="text-align:right"><img class="icon-water" src="img/Water.svg"></div>
+                            <div class="col" style="text-align:left">Water</div>
+                            <span class="col" style="font-size: 17px; color: #808080; text-align:right; letter-spacing: 0.02px" type="text" id="water" text-align="right"></span>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col col-10" style="text-align:right"><img class="icon-bean" src="img/Beans.svg"></div>
+                            <div class="col" style="text-align:left">Beans</div>
+
+                            <span class="col" style="font-size: 17px; color: #808080; text-align:right; letter-spacing: 0.02px" type="text" id="beans" text-align="right"></span>
+                        </div>
+
+                    </div>
+
+
+                    <input id="ex1" type="text" data-slider-min="150" data-slider-max="1200" data-slider-step="1" data-slider-value="0">
+
+
+
+                
+            </div>
+            <!-- core JavaScript
+    ================================================== -->
+            <script type='text/javascript' src="js/jquery-2.1.4.min.js"></script>
+            <script type='text/javascript' src="js/bootstrap-slider.js"></script>
+            <script type='text/javascript'>
+                $(document).ready(function() {
+                    /* Example 1 */
+                    $("#ex1").slider();
+                    $("#ex1").on("slide", function(slideEvt) {
+                        $("#water").text(slideEvt.value + ' ml');
+                        var beans = slideEvt.value / 16.6945;
+                        $("#beans").text(beans.toPrecision(2) + ' g');
+                        $("#cups").text((slideEvt.value / 150).toPrecision(1) + ' cups');
+
+                        $("#coffee").text((slideEvt.value - (beans * 2).toPrecision(2)) + ' ml');
+                    });
+
+                    //            var mySlider = $("input.slider").slider();
+                    //            var value = mySlider.slider('getValue');
+                    //            var cupsRaw = value / 150;
+                    //            $('#cups').val(cupsRaw.toPrecision(1) + ' cups');
+
+
+
+                    //            var coffee = $('#coffee').val((this.cv) + ' ml');
+                    //            //var beansRaw = this.cv / 16.6945;
+                    //            var waterDispersion = 0;
+                    //            var beansRaw = waterDispersion / 16.6945;
+                    //            var beansFixed = beansRaw.toPrecision(2);
+                    //            var beans = $('#beans').val(beansFixed + ' g');
+                    //
+                    //            var waterDispersion = this.cv + (beansFixed * 2)
+                    //
+                    //            $('#water').val(waterDispersion + ' g');
+
+
+                });
+
+            </script>
+    </ion-content>
+</ion-view>

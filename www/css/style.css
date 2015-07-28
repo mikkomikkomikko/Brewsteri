@@ -1,0 +1,62 @@
+div.slider {
+    text-align: center;
+    width: 100% !important;
+    height: 100%;
+    float: left;
+    font-size: 10px;
+}
+
+body,
+h1 {
+    font-size: 20px;
+    color: #808080;
+    letter-spacing: -0.02px;
+    text-align: center;
+}
+.col {
+    font-size: 17px;
+    color: #808080;
+    letter-spacing: 0.02px;
+    line-height: 20px;
+    vertical-align: baseline;
+    padding: 5px;
+}
+ion-content {
+    background-color: #F0F1F5;
+}
+
+.slider2 {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+.icon-bean {
+    width: auto;
+    height: 20px;
+    vertical-align: middle;
+}
+.icon-coffee {
+    height: 20px;
+    width: auto;
+}
+.icon-cups {
+    height: auto;
+    width: 20px;
+    margin-left: 25%;
+}
+.icon-water {
+    height: 20px;
+    width: auto;
+    vertical-align: text-bottom
+}
+.logo {
+    text-align: center;
+    height: 24px;
+    width: auto;
+    color: #808080;
+    line-height: 44px;
+    vertical-align: text-bottom;
+}
+
+#ex1Slider .slider-selection {
+    background: #BABABA;
+}
